@@ -1,0 +1,71 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug openai2ollama_api",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=openai2ollama_api",
+                    "--package=openai2ollama_api"
+                ],
+                "filter": {
+                    "name": "openai2ollama_api",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "RUST_LOG": "debug"
+            },
+            "terminal": "integrated"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Run openai2ollama_api",
+            "cargo": {
+                "args": [
+                    "run",
+                    "--bin=openai2ollama_api",
+                    "--package=openai2ollama_api"
+                ],
+                "filter": {
+                    "name": "openai2ollama_api",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "RUST_LOG": "info"
+            },
+            "terminal": "integrated"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug 单元测试",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=openai2ollama_api",
+                    "--package=openai2ollama_api"
+                ],
+                "filter": {
+                    "name": "openai2ollama_api",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "RUST_LOG": "debug"
+            }
+        }
+    ]
+}
